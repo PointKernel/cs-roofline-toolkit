@@ -72,7 +72,7 @@ class ert_core:
 
     parser.add_option_group(post_group)
 
-    parser.add_option("--verbose",dest="verbose",action="store",nargs=1,default=1,type=int,help="Set the verbosity of the screen output [default = %default].    = 0 : no output,                                         = 1 : outlines progress,                                 = 2 : good for debugging (prints all commands)")
+    parser.add_option("--verbose",dest="verbose",action="store",nargs=1,default=2,type=int,help="Set the verbosity of the screen output [default = %default].    = 0 : no output,                                         = 1 : outlines progress,                                 = 2 : good for debugging (prints all commands)")
     parser.add_option("--quiet",dest="verbose",action="store_const",const=0,help="Don't generate any screen output, '--verbose=0'")
 
     (options,args) = parser.parse_args()
