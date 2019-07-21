@@ -25,6 +25,8 @@ matrix:
             - build-essential
             - libmpich-dev
             - mpich
+            - gnuplot
+            - gnuplot-x11
       env:
         - MATRIX_EVAL="CC=$(which g++-7) && CXX=$(which g++-7)"
     # ------------------------------------------------------------------------ #
@@ -47,6 +49,8 @@ matrix:
     #        - build-essential
     #        - libmpich-dev
     #        - mpich
+    #        - gnuplot
+    #        - gnuplot-x11    
     #  env:
     #    - MATRIX_EVAL="CC=$(which gxx-7) && CXX=$(which g++-7)"
 
