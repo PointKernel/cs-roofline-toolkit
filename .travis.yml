@@ -33,22 +33,22 @@ matrix:
     #
     # ------------------------------------------------------------------------ #
     # GCC 7
-    - os: linux
-      dist: xenial
-      sudo: false
-      python: '3.7'
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-7
-            - g++-7
-            - build-essential
-            - libmpich-dev
-            - mpich
-      env:
-        - MATRIX_EVAL="CC=$(which gxx-7) && CXX=$(which g++-7)"
+    #- os: linux
+    #  dist: xenial
+    #  sudo: false
+    #  python: '3.7'
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #      packages:
+    #        - gcc-7
+    #        - g++-7
+    #        - build-essential
+    #        - libmpich-dev
+    #        - mpich
+    #  env:
+    #    - MATRIX_EVAL="CC=$(which gxx-7) && CXX=$(which g++-7)"
 
 before_install:
     - eval "${MATRIX_EVAL}"
@@ -63,4 +63,5 @@ install:
 
 script:
     - cd Empirical_Roofline_Tool-1.1.0
-    - ./ert Config/config.maeve.lbl.gov
+    - ./ert .travis-ci/config.travis-ci.01
+    - ./ert .travis-ci/config.travis-ci.02
