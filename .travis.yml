@@ -63,5 +63,5 @@ install:
 
 script:
     - cd Empirical_Roofline_Tool-1.1.0
-    - ./ert .travis-ci/config.travis-ci.01
-    - ./ert .travis-ci/config.travis-ci.02
+    - ./ert --verbose=2 .travis-ci/config.travis-ci.01
+    - ./ert --verbose=2 .travis-ci/config.travis-ci.02

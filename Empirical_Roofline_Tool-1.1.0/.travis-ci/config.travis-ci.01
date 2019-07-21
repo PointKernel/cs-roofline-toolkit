@@ -17,7 +17,7 @@ ERT_FLOPS   1,2,4
 ERT_ALIGN   32
 
 ERT_CC      g++
-ERT_CFLAGS  -O3 -mfma
+ERT_CFLAGS  -O3 -mfma -std=c++11
 
 ERT_LD      g++
 ERT_LDFLAGS -mfma
