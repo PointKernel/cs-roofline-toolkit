@@ -1,0 +1,66 @@
+# ERT Travis CI file
+
+language: python
+
+# The apt packages here install our compiled code dependencies.
+matrix:
+  include:
+    # ------------------------------------------------------------------------ #
+    #
+    #   Python 2.7
+    #
+    # ------------------------------------------------------------------------ #
+    # GCC 7
+    - os: linux
+      dist: xenial
+      sudo: false
+      python: '2.7'
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-7
+            - g++-7
+            - build-essential
+            - libmpich-dev
+            - mpich
+      env:
+        - MATRIX_EVAL="CC=$(which g++-7) && CXX=$(which g++-7)"
+    # ------------------------------------------------------------------------ #
+    #
+    #   Python 3.6
+    #
+    # ------------------------------------------------------------------------ #
+    # GCC 7
+    - os: linux
+      dist: xenial
+      sudo: false
+      python: '3.7'
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-7
+            - g++-7
+            - build-essential
+            - libmpich-dev
+            - mpich
+      env:
+        - MATRIX_EVAL="CC=$(which gxx-7) && CXX=$(which g++-7)"
+
+before_install:
+    - eval "${MATRIX_EVAL}"
+    - export CC=${CC}
+    - export CXX=${CXX}
+    - echo "Python = $(which python) [version ${PYTHON_VERSION}]"
+    - echo "PYBINPATH = ${PYBINPATH}"
+
+install:
+    - eval "${MATRIX_EVAL}"
+    - env
+
+script:
+    - cd Empirical_Roofline_Tool-1.1.0
+    - ./ert Config/config.maeve.lbl.gov
