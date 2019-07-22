@@ -2,7 +2,6 @@
 
 language: python
 
-# The apt packages here install our compiled code dependencies.
 matrix:
   include:
     # ------------------------------------------------------------------------ #
@@ -59,7 +58,7 @@ before_install:
     - export CC=${CC}
     - export CXX=${CXX}
     - echo "Python = $(which python) [version ${PYTHON_VERSION}]"
-    - echo "PYBINPATH = ${PYBINPATH}"
+    - gcc --version
 
 install:
     - eval "${MATRIX_EVAL}"
@@ -68,4 +67,6 @@ install:
 script:
     - cd Empirical_Roofline_Tool-1.1.0
     - ./ert --verbose=2 .travis-ci/config.travis-ci.01
+    - cat Results.travis-ci.01/*/roofline.json
     - ./ert --verbose=2 .travis-ci/config.travis-ci.02
+    - cat Results.travis-ci.02/*/roofline.json

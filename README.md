@@ -1,5 +1,5 @@
 # CS Roofline Toolkit #
-[![Travis CI Build Status](https://travis-ci.org/PointKernel/cs-roofline-toolkit.svg?branch=master)](https://travis-ci.org/PointKernel/cs-roofline-toolkit.svg?branch=master)
+[![Travis CI Build Status](https://travis-ci.org/PointKernel/cs-roofline-toolkit.svg?branch=master)](https://travis-ci.org/PointKernel/cs-roofline-toolkit)
 
 Welcome to the CS Roofline Toolkit Bitbucket site.  The Empirical Roofline Tool and Roofline Visualizer are currently available here.
 In the future additional tools will be hosted here.  
