@@ -17,10 +17,10 @@ ERT_FLOPS   1
 ERT_ALIGN   32
 
 ERT_CC      g++
-ERT_CFLAGS  -O3 -mfma -std=c++11
+ERT_CFLAGS  -O3 -mfma -std=c++11 -funroll-loops -ftree-vectorize -ftree-loop-optimize -ftree-loop-vectorize -msse -msse2 -mssse3 -msse4.1 -msse4.2 -mavx
 
 ERT_LD      g++
-ERT_LDFLAGS -mfma
+ERT_LDFLAGS -mfma -funroll-loops -ftree-vectorize -ftree-loop-optimize -ftree-loop-vectorize -msse -msse2 -mssse3 -msse4.1 -msse4.2 -mavx
 ERT_LDLIBS  
 
 ERT_PRECISION FP32,FP64
